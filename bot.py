@@ -8,12 +8,12 @@ from datetime import datetime, timedelta, timezone
 
 # ==================== CONFIGURATION ====================
 BOT_TOKEN = '8610830096:AAFxHHDpLWGimEwdqXGGmv1lLrAYwXf5YOI'
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = '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'
 ADMIN_ID = "8112785371"
 REPO_OWNER = "phyo200"
 REPO_NAME = "phyoe"
-CONCURRENCY = 1000
-BATCH_SIZE = 1000
+CONCURRENCY = 200
+BATCH_SIZE = 200
 # =======================================================
 
 SUCCESS_CODE = asyncio.Queue()
