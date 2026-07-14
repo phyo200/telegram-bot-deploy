@@ -8,7 +8,7 @@ from datetime import datetime, timedelta, timezone
 
 # ==================== CONFIGURATION ====================
 BOT_TOKEN = '8610830096:AAFxHHDpLWGimEwdqXGGmv1lLrAYwXf5YOI'
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = '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'
 ADMIN_ID = "8112785371"
 REPO_OWNER = "phyo200"
 REPO_NAME = "phyoe"
@@ -444,6 +444,9 @@ def iter_codes(mode):
     if mode == "all":
         while True:
             yield all_generator(6)
+    if mode == "alpha-7":
+        while True:
+            yield all_generator(7)
     if '?' in mode:
         while True:
             yield pattern_generator(mode)
