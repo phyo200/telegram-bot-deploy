@@ -8,7 +8,7 @@ from datetime import datetime, timedelta, timezone
 
 # ==================== CONFIGURATION ====================
 BOT_TOKEN = '8610830096:AAFxHHDpLWGimEwdqXGGmv1lLrAYwXf5YOI'
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = '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'
 ADMIN_ID = "8112785371"
 REPO_OWNER = "phyo200"
 REPO_NAME = "phyoe"
@@ -417,6 +417,17 @@ strings_2 = string.ascii_lowercase
 def ascii_generator(length=6):
     return "".join(random.choice(strings_2) for _ in range(length))
 
+def pattern_generator(pattern):
+    """Generate codes from pattern. '?' = random lowercase letter or digit"""
+    charset = string.ascii_lowercase + string.digits
+    result = []
+    for ch in pattern:
+        if ch == '?':
+            result.append(random.choice(charset))
+        else:
+            result.append(ch)
+    return ''.join(result)
+
 def iter_codes(mode):
     if mode in ["6", "7"]:
         length = int(mode)
@@ -433,6 +444,9 @@ def iter_codes(mode):
     if mode == "all":
         while True:
             yield all_generator(6)
+    if '?' in mode:
+        while True:
+            yield pattern_generator(mode)
     raise ValueError(f"Unsupported scan mode: {mode}")
 
 def format_progress(checked, total=None, speed=0):
