@@ -8,7 +8,7 @@ from datetime import datetime, timedelta, timezone
 
 # ==================== CONFIGURATION ====================
 BOT_TOKEN = '8610830096:AAFxHHDpLWGimEwdqXGGmv1lLrAYwXf5YOI'
-GITHUB_TOKEN = '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'
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', '')
 ADMIN_ID = "8112785371"
 REPO_OWNER = "phyo200"
 REPO_NAME = "phyoe"
@@ -300,7 +300,11 @@ async def check_session_url(session_url):
     try:
         async with session.get(session_url, allow_redirects=True, headers=headers) as response:
             text_ = str(response.url)
-            return "sessionId" in text_
+            if "sessionId" in text_:
+                return True
+            if "ruijienetworks" in session_url or "ruijienetworks" in text_:
+                return True
+            return response.status == 200
     except:
         return False
 
