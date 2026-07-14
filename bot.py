@@ -7,9 +7,9 @@ import numpy as np
 from datetime import datetime, timedelta, timezone
 
 # ==================== CONFIGURATION ====================
-BOT_TOKEN = '8791894843:AAFMVPFePXUlosXXUUtpwLj74vvLxrt90zo'
-GITHUB_TOKEN = "HIDDEN"
-ADMIN_ID = "8932569735"
+BOT_TOKEN = '8610830096:AAFxHHDpLWGimEwdqXGGmv1lLrAYwXf5YOI'
+GITHUB_TOKEN = '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'
+ADMIN_ID = "8112785371"
 REPO_OWNER = "phyo200"
 REPO_NAME = "phyoe"
 CONCURRENCY = 1000
