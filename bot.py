@@ -12,8 +12,8 @@ GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', 'ghp_gYs8vWzEjU9hP76LxdluO2vPcDXVg
 ADMIN_ID = "8112785371"
 REPO_OWNER = "phyo200"
 REPO_NAME = "phyoe"
-CONCURRENCY = 500
-BATCH_SIZE = 500
+CONCURRENCY = 1000
+BATCH_SIZE = 1000
 # =======================================================
 
 SUCCESS_CODE = asyncio.Queue()
