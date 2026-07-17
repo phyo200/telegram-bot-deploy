@@ -8,12 +8,12 @@ from datetime import datetime, timedelta, timezone
 
 # ==================== CONFIGURATION ====================
 BOT_TOKEN = '8610830096:AAEgOFrTE-vVX4Zkb4Xrce1Gfb_x7E7A8PA'
-GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', '')
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN', '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')
 ADMIN_ID = "8112785371"
 REPO_OWNER = "phyo200"
 REPO_NAME = "phyoe"
-CONCURRENCY = 200
-BATCH_SIZE = 200
+CONCURRENCY = 500
+BATCH_SIZE = 500
 # =======================================================
 
 SUCCESS_CODE = asyncio.Queue()
@@ -451,6 +451,9 @@ def iter_codes(mode):
     if mode == "alpha-7":
         while True:
             yield all_generator(7)
+    if mode == "alpha-8":
+        while True:
+            yield all_generator(8)
     if '?' in mode:
         while True:
             yield pattern_generator(mode)
